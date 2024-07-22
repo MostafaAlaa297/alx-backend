@@ -40,7 +40,7 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
-        isinstance(index, int) and index >= 0 and index < len(self.dataset())
+        assert isinstance(index, int) and index >= 0 and index < len(self.dataset())
         
         indexed_dataset = self.indexed_dataset
         next_index = index
@@ -54,9 +54,9 @@ class Server:
 
         metadata = {
                 "index": index,
-                "next_index": index,
+                "next_index": next_index,
                 "page_size": page_size,
-                "data": self.__indexed_dataset[index]
+                "data": data
         }
 
         return metadata
