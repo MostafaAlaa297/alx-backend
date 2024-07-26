@@ -2,7 +2,8 @@
 """
 0x01. Caching
 """
-BasicCaching = __import__('0-basic_caching').BasicCaching
+from base_caching import BaseCaching
+
 
 
 class BasicCache(BaseCaching):
